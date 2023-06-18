@@ -112,7 +112,10 @@ body {
     transition: opacity 1s;
   }
   
-  
+  video {
+      max-width: 500px;
+      max-height: 300px;
+  }
   
   /* Estilos para dispositivos móviles */
   @media only screen and (max-width:600px) {
