@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Feliz Día del Padre - Superman</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+          <img src="R.png" alt="Logo">
+          <h1>Feliz Día del Padre</h1>
+          <img src="R.png" alt="Logo">
+        </div>
+      </header>
+
+  <section>
+    <h2>¡Yinme Ninzon Valera Guaita!</h2>
+    <h2>"¡Feliz día, papá! Sé que llego un poquito tarde con esto, pero espero que comprendas que mi intención es decirle cuanto significa usted para mí.
+
+        Aunque este detalle no salió como lo había pensao, quiero que sepas que lo hice con todo mi corazón. No importa cuán sencillo o feo sea, lo importante es que refleja mi profundo cariño y admiración pa' usted.
+        
+        Desde que tengo memoria, has sido un ejemplo fundaméntal en mi vida. Tus consejos sabios, tus regaños y tus consejos han sido fundamentales pa mi crecimiento personal. Me has enseñado el valor del esfuerzo, la perseverancia y la honestidád.
+        
+        Cada día me doy cuenta de lo afortunao que soy de tener a un padre como usted. Tu presencia ha sido mi refugio en los momentos difíciles y tu apoyo constante me ha dado la fuerza para superar cualquier obstáculo que se me presente.
+        
+        Gracias a ti, he aprendido a valorar los peqüeños detalles de la vida, a ser responsable y a enfrentar los desafíos con valentía. Eres un ejemplo de integridád, generosidád y amor incondicional.
+        
+        Quiero que sepas que no importa el tiempo que pase, mi amor por ti crece cada día más. No hay palabras suficientes pa' expresar lo agradecido que estoy por tener a un padre como usted. Eres mi héroe, mi confidente y mi guía.
+        
+        Hoy, en este día tan especial, quiero desearte todo lo mejor. Que la vida te llene de felicidá, salud y éxito en todas tus metas. Te mereces lo mejor, papá, y haré to' lo posible pa' hacerte sentir orgulloso de mí.
+
+        Gracias por ser el mejor padre del mundo. Te quiero con todo corazón y que Dios me lo bendiga siempre y lo acompañe. ¡Feliz día, papá!".</h2>
+
+    <!-- Agrega un contenedor para el carrusel -->
+    <div class="carousel-container">
+      <!-- Agrega los botones para cambiar de imagen -->
+      <button class="prev">❮</button>
+      <button class="next">❯</button>
+
+      <!-- Agrega las imágenes al carrusel -->
+      <div class="carousel-images">
+        <img src="IMG-20230618-WA0020.jpg" alt="Superman Image 1">
+        <img src="IMG-20230618-WA0021.jpg" alt="Superman Image 2">
+        <img src="IMG-20230618-WA0022.jpg" alt="Superman Image 3">
+        <img src="IMG-20230618-WA0023.jpg" alt="Superman Image 4">
+        <img src="IMG-20230618-WA0024.jpg" alt="Superman Image 5">
+      </div>
+    </div>
+
+    <p>¡Gracias por ser el héroe de nuestros corazones!</p>
+    <video controls>
+      <source src="y2meta.com - El increíble mundo de Gumball - El Héroe - Español Latino-(1080p).mp4" type="video/mp4">
+      Tu navegador no admite el elemento de video.
+    </video>
+  </section>
+
+  <footer>
+    <p>© 2023 Todos los derechos reservados - N.S | A.S</p>
+  </footer>
+
+  <script>
+    // Obtiene los elementos del carrusel
+    const carouselContainer = document.querySelector('.carousel-container');
+    const carouselImages = document.querySelectorAll('.carousel-images img');
+
+    // Obtiene los botones del carrusel
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
+
+    // Obtiene el elemento de video
+    const supermanVideo = document.querySelector('video');
+
+    // Establece la imagen actual en la primera imagen
+    let currentImage = 0;
+
+    // Muestra la imagen actual
+// Muestra la imagen actual
+function showCurrentImage() {
+  // Establece la opacidad de todas las imágenes en cero
+  carouselImages.forEach(image => {
+    image.style.opacity = '0';
+  });
+
+  // Establece la opacidad de la imagen actual en uno
+  carouselImages[currentImage].style.opacity = '1';
+}
+
+
+    // Muestra la primera imagen
+    showCurrentImage();
+
+    // Agrega un evento click a los botones del carrusel
+    prevButton.addEventListener('click', () => {
+      // Disminuye la imagen actual en uno
+      currentImage--;
+
+      // Si la imagen actual es menor que cero, establece la imagen actual en la última imagen
+      if (currentImage < 0) {
+        currentImage = carouselImages.length - 1;
+      }
+
+      // Muestra la imagen actual
+      showCurrentImage();
+
+      // Reinicia el temporizador
+      resetTimer();
+    });
+
+    nextButton.addEventListener('click', () => {
+      // Aumenta la imagen actual en uno
+      currentImage++;
+
+      // Si la imagen actual es mayor que el número total de imágenes, establece la imagen actual en la primera imagen
+      if (currentImage > carouselImages.length - 1) {
+        currentImage = 0;
+      }
+
+      // Muestra la imagen actual
+      showCurrentImage();
+
+      // Reinicia el temporizador
+      resetTimer();
+    });
+
+    // Crea un temporizador para cambiar automáticamente las imágenes después de un tiempo determinado
+    let timer = setInterval(() => {
+      nextButton.click();
+    }, 5000);
+
+    // Reinicia el temporizador
+    function resetTimer() {
+      // Detiene el temporizador
+      clearInterval(timer);
+
+      // Inicia el temporizador de nuevo
+      timer = setInterval(() => {
+        nextButton.click();
+    }, 5000);
+}
+
+// Agrega un evento de reproducción al elemento de video
+supermanVideo.addEventListener('play', () => {
+  // Detiene el temporizador
+  clearInterval(timer);
+});
+
+// Agrega un evento de pausa al elemento de video
+supermanVideo.addEventListener('pause', () => {
+  // Reinicia el temporizador
+  resetTimer();
+});
+
+// Agrega un evento de finalización al elemento de video
+supermanVideo.addEventListener('ended', () => {
+  // Reinicia el temporizador
+  resetTimer();
+});
+</script>
+</body>
+</html>

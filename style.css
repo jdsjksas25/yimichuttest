@@ -1,0 +1,148 @@
+/* Establece la fuente, margen y relleno del cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    /* Establece la imagen de fondo */
+    background-image: url('R\ \(3\).jpeg');
+    background-size: cover;
+    background-position: center;
+    /* Agrega un efecto de desenfoque al fondo */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  
+  /* Estilos para el encabezado */
+  header {
+    background-color: transparent;
+    position: relative;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Estilos para el contenedor del logotipo */
+  .logo-container {
+      position:relative;
+      top:20px;
+      display:flex;
+      justify-content:center
+  }
+  
+  /* Estilos para las imágenes dentro del contenedor del logotipo */
+  .logo-container img {
+      width:50px;
+      height:50px
+  }
+  
+  /* Estilos para el título principal */
+  header h1 {
+      color:white;
+      margin-top:1px
+  }
+  
+  /* Estilos para la sección principal */
+  section {
+      max-width:750px;
+      margin:30px auto 20px;
+      padding:20px;
+      text-align:center;
+      /* Agrega un fondo semitransparente */
+      background-color: transparent;
+      /* Agrega una transición al cambiar el tamaño de la ventana */
+      transition:max-width .5s ease-in-out
+  }
+  
+  /* Estilos para el título secundario */
+  section h2 {
+      color:white;
+  }
+  
+  /* Estilos para el párrafo */
+  section p {
+      color:white;
+  }
+  
+  /* Estilos para las imágenes dentro de la sección principal */
+  section img {
+      max-width:100%;
+      height:auto;
+      margin:20px auto
+  }
+  
+  /* Estilos para el pie de página */
+  footer {
+      background-color:rgba(255,255,255,0.7);
+      color:#fff;
+      padding:10px;
+      text-align:center
+  }
+
+  footer p {
+    color:black;
+  }
+  
+
+  .carousel-container {
+    /* Establece una altura fija para el contenedor del carrusel */
+    height: 350px;
+    margin: 20px auto;
+  }
+  
+  .carousel-images img {
+    max-width: 500px;
+    max-height: 300px;
+  }
+  
+  .carousel-images {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .carousel-images img {
+    position: absolute;
+  }
+  
+  .carousel-images img {
+    opacity: 0;
+  }
+
+  .carousel-images img {
+    /* Agrega una transición de opacidad */
+    transition: opacity 1s;
+  }
+  
+  
+  
+  /* Estilos para dispositivos móviles */
+  @media only screen and (max-width:600px) {
+      header {
+          padding:10px
+      }
+      
+      section {
+          padding:10px
+      }
+      
+      header img {
+          max-width:80%;
+          height:auto;
+          display:block;
+          margin-left:auto;
+          margin-right:auto
+      }
+      
+      /* Agrega una animación al cargar la página */
+      body {
+          animation-name:flying;
+          animation-duration:4s
+      }
+      
+      
+
+  @keyframes flying {
+          from {background-position:center}
+          to {background-position:left}
+  }
+  }
+  
